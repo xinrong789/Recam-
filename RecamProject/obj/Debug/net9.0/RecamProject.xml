@@ -4,17 +4,203 @@
         <name>RecamProject</name>
     </assembly>
     <members>
-        <member name="T:RecamProject.Migrations.InitialCreate">
+        <member name="T:RecamProject.Migrations.initial">
             <inheritdoc />
         </member>
-        <member name="M:RecamProject.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:RecamProject.Migrations.initial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:RecamProject.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:RecamProject.Migrations.initial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:RecamProject.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+        <member name="M:RecamProject.Migrations.initial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:RecamProject.Data.RecamDbContext.Agents" -->
+        <member name="P:RecamProject.Domain.Agent.User">
+            <summary>
+            导航属性：一对一用户
+            </summary>
+        </member>
+        <member name="T:RecamProject.Domain.AgentListingCase">
+            <summary>
+            多对多关系：代理人与房源的绑定中间表
+            </summary>
+        </member>
+        <member name="T:RecamProject.Domain.AgentPhotographyCompany">
+            <summary>
+            多对多关系：代理人与摄影公司的关联表
+            </summary>
+        </member>
+        <member name="T:RecamProject.Domain.ApplicationUser">
+            <summary>
+            用户实体，继承自 ASP.NET Core IdentityUser
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.ApplicationUser.IsDeleted">
+            <summary>
+            用户是否被逻辑删除
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.ApplicationUser.CreatedAt">
+            <summary>
+            用户创建时间
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.ApplicationUser.Agent">
+            <summary>
+            导航属性：一对一代理人信息（可选）
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.ApplicationUser.PhotographyCompany">
+            <summary>
+            导航属性：一对一摄影公司信息（可选）
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.ApplicationUser.ListingCases">
+            <summary>
+            导航属性：该用户创建的 ListingCases
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.ApplicationUser.MediaAssets">
+            <summary>
+            导航属性：该用户上传的媒体资源
+            </summary>
+        </member>
+        <member name="T:RecamProject.Domain.CaseContact">
+            <summary>
+            联系人信息（与房源关联）
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.CaseContact.ContactId">
+            <summary>
+            主键，联系人编号
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.CaseContact.FirstName">
+            <summary>
+            联系人名
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.CaseContact.LastName">
+            <summary>
+            联系人姓
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.CaseContact.CompanyName">
+            <summary>
+            公司名
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.CaseContact.ProfileUrl">
+            <summary>
+            头像或简介链接
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.CaseContact.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.CaseContact.PhoneNumber">
+            <summary>
+            电话号码
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.CaseContact.ListingCaseId">
+            <summary>
+            外键：关联房源
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.CaseContact.ListingCase">
+            <summary>
+            房源导航属性
+            </summary>
+        </member>
+        <member name="T:RecamProject.Domain.MediaAsset">
+            <summary>
+            房源媒体资源（图片、视频等）
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.MediaAsset.Id">
+            <summary>
+            主键，媒体ID
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.MediaAsset.MediaType">
+            <summary>
+            媒体类型（如 image/video）
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.MediaAsset.MediaUrl">
+            <summary>
+            媒体文件 URL
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.MediaAsset.UploadedAt">
+            <summary>
+            上传时间
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.MediaAsset.IsSelect">
+            <summary>
+            是否选中（例如在 UI 上展示）
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.MediaAsset.IsHero">
+            <summary>
+            是否是封面图
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.MediaAsset.ListingCaseId">
+            <summary>
+            外键：关联房源
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.MediaAsset.UserId">
+            <summary>
+            外键：上传用户
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.MediaAsset.IsDeleted">
+            <summary>
+            是否已删除
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.MediaAsset.ListingCase">
+            <summary>
+            房源导航属性
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.MediaAsset.User">
+            <summary>
+            用户导航属性（可选）
+            </summary>
+        </member>
+        <member name="T:RecamProject.Domain.PhotographyCompany">
+            <summary>
+            摄影公司实体，用于标识用户所属摄影机构
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.PhotographyCompany.UserId">
+            <summary>
+            主键，同时作为与 ApplicationUser 的外键（1:1）
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.PhotographyCompany.PhotographyCompanyName">
+            <summary>
+            摄影公司名称
+            </summary>
+        </member>
+        <member name="P:RecamProject.Domain.PhotographyCompany.User">
+            <summary>
+            导航属性：摄影公司绑定的用户（1:1）
+            </summary>
+        </member>
+        <member name="T:RecamProject.Domain.StatusHistory">
+            <summary>
+            房源状态流转历史记录
+            </summary>
         </member>
     </members>
 </doc>
