@@ -1,5 +1,6 @@
 using MongoDB.Driver;
 using RecamProject.Settings;
+using RecamProject.Domain.Mongo;
 
 
 using Microsoft.Extensions.Options;
@@ -16,10 +17,7 @@ namespace RecamProject.Data
             _database = mongoClient.GetDatabase(settings.Value.DatabaseName);
         }
 
-        // 定义每个 Collection 作为属性暴露出去
-        // public IMongoCollection<LogEntry> Logs => _database.GetCollection<LogEntry>("Logs");
-
-        // 你可以继续加其他 Collection：
-        // public IMongoCollection<YourOtherEntity> YourOtherEntities => _database.GetCollection<YourOtherEntity>("YourOtherEntities");
+     public IMongoCollection<CaseHistory> CaseHistories => _database.GetCollection<CaseHistory>("CaseHistories");
+    public IMongoCollection<UserActivityLog> UserActivityLogs => _database.GetCollection<UserActivityLog>("UserActivityLogs");
     }
 }
