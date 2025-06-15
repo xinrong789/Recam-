@@ -183,3 +183,6 @@
 /Users/lixinrong/Desktop/Recam-.net project/RecamProject/bin/Debug/net9.0/AutoMapper.dll
 /Users/lixinrong/Desktop/Recam-.net project/RecamProject/bin/Debug/net9.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 /Users/lixinrong/Desktop/Recam-.net project/RecamProject/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/lixinrong/Desktop/Recam-.net project/RecamProject/bin/Debug/net9.0/FluentValidation.dll
+/Users/lixinrong/Desktop/Recam-.net project/RecamProject/bin/Debug/net9.0/FluentValidation.AspNetCore.dll
+/Users/lixinrong/Desktop/Recam-.net project/RecamProject/bin/Debug/net9.0/FluentValidation.DependencyInjectionExtensions.dll

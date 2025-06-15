@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using RecamProject.Settings;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using RecamProject.Middlewares;
 
 
 
@@ -15,6 +18,7 @@ namespace RecamProject
 {
     public class Program
     {
+        [Obsolete]
         public static void Main(string[] args)
         {
 
@@ -22,10 +26,14 @@ namespace RecamProject
 
             // Add services to the container.
 
-
+            builder.Services.AddControllers()
+           .AddFluentValidation(fv =>
+           {
+               // 自动从当前程序集中注册所有继承自 AbstractValidator<T> 的类
+               fv.RegisterValidatorsFromAssemblyContaining<Program>();
+           });
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddControllers();
-
+            // builder.Services.AddControllers();
 
 
 
@@ -49,7 +57,7 @@ namespace RecamProject
 
             builder.Services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<RecamDbContext>();
-           
+
 
             var jwtSettingsSection = builder.Configuration.GetSection("JwtSettings");
             builder.Services.Configure<JwtSettings>(jwtSettingsSection);
@@ -77,7 +85,7 @@ namespace RecamProject
                     IssuerSigningKey = new SymmetricSecurityKey(key)
                 };
             });
-              builder.Services.AddAuthorization(options =>
+            builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminPolicy", policy =>
         policy.RequireClaim("scope", "admin"));
@@ -94,8 +102,9 @@ namespace RecamProject
 
 
 
-
             var app = builder.Build();
+            app.UseMiddleware<ExceptionMiddleware>();
+
 
 
 
@@ -110,7 +119,7 @@ namespace RecamProject
 
             app.UseHttpsRedirection();
 
-          
+
 
 
 

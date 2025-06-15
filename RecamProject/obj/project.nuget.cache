@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "S4y6PLvYM8E=",
+  "dgSpecHash": "UH5aoiSph94=",
   "success": true,
   "projectFilePath": "/Users/lixinrong/Desktop/Recam-.net project/RecamProject/RecamProject.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,9 @@
     "/Users/lixinrong/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/Users/lixinrong/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",
     "/Users/lixinrong/.nuget/packages/dnsclient/1.6.1/dnsclient.1.6.1.nupkg.sha512",
+    "/Users/lixinrong/.nuget/packages/fluentvalidation/12.0.0/fluentvalidation.12.0.0.nupkg.sha512",
+    "/Users/lixinrong/.nuget/packages/fluentvalidation.aspnetcore/11.3.1/fluentvalidation.aspnetcore.11.3.1.nupkg.sha512",
+    "/Users/lixinrong/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.11.0/fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
     "/Users/lixinrong/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/lixinrong/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/9.0.6/microsoft.aspnetcore.authentication.jwtbearer.9.0.6.nupkg.sha512",
     "/Users/lixinrong/.nuget/packages/microsoft.aspnetcore.cryptography.internal/9.0.6/microsoft.aspnetcore.cryptography.internal.9.0.6.nupkg.sha512",
